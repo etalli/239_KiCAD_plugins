@@ -2,31 +2,33 @@
 
 このリポジトリには、クリーンアップ、バックアップ、メタデータ挿入などの一般的なPCBタスクを自動化するためのカスタムKiCad 9.0.4プラグインのセットが含まれています。各スクリプトは簡単な操作のために設計されており、KiCadアプリケーションにツールバーボタンアイコンが含まれています。
 
-[English Version](README.md) | 日本語版
+なぜこのツールを作ったのか？オートルーターを実行する前に既存の配線を削除するのが面倒だったためで、アイコンからワンクリックで一括削除できるようにしました。
+
+[English Version](README.md) | [日本語版](README-j.md)
 
 ## 📦 プラグイン一覧
 
-### 2. delete_track.py
+### 1. delete_track.py
 PCBからすべてのトラックセグメントを削除します。
 
 - 🧹 `PCB_TRACK`オブジェクトのみを削除（ビアやゾーンは除く）
 - 🧪 KiCad 9.0.1での使用を想定して設計
 - ツールバーボタン付き
 
-### 3. delete_unlocked_track.py
+### 2. delete_unlocked_track.py
 PCBからロックされていないトラックセグメントを削除します。
 
 - 🧹 ロックされていない`PCB_TRACK`オブジェクトのみを削除
 - ロックされたトラックは保持
 - ツールバーボタン付き
 
-### 4. delete_all_tracks_and_vias.py
+### 3. delete_all_tracks_and_vias.py
 PCBからトラックセグメントとビアの両方を削除します。
 
 - `PCB_TRACK`と`PCB_VIA`オブジェクトの両方を削除
 - ツールバーボタン付き
 
-### 5. insert_build_number.py
+### 4. insert_build_number.py
 PCBレイアウトに「ビルド番号」テキストを挿入または更新します。
 
 - ビルド番号を自動的にインクリメント（例：`Build 001`）
@@ -34,14 +36,14 @@ PCBレイアウトに「ビルド番号」テキストを挿入または更新�
 - 既存のテキストが見つかった場合は置換、そうでなければ新規追加
 - テキストは位置(10mm, 10mm)のフロントシルクスクリーンレイヤーに追加
 
-### 6. change_items_to_Fsilkscreen.py
+### 5. change_items_to_Fsilkscreen.py
 選択されたアイテムをフロントシルクスクリーンレイヤーに変更します。
 
 - 選択されたアイテムをF.Silkscreenレイヤーに変換
 - レイヤー間でのアイテム移動に便利
 - ツールバーボタン付き
 
-### 7. backup.py
+### 6. backup.py
 現在のKiCadプロジェクトのZIPアーカイブバックアップを作成します。
 
 - ✅ `.kicad_pro`、`.kicad_sch`、`.kicad_pcb`をサポート
@@ -55,4 +57,4 @@ PCBレイアウトに「ビルド番号」テキストを挿入または更新�
 
 Good luck！
 
-[English Version](README.md) | 日本語版
+[English Version](README.md) | [日本語版](README-j.md)
