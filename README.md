@@ -62,7 +62,31 @@ Creates a ZIP archive backup of the current project with timestamp.
   
 ## Installation
 
+### Method 1: Manual Installation
+
 1. Open the plugins folder from the KiCAD application, Tools/Plugins folder, then copy all the python scripts and icons into the directory.  That's all.
+
+### Method 2: Automated Installation with Makefile
+
+For easier installation and management, you can use the included Makefile:
+
+```bash
+# Install all plugins and icons
+make install
+
+# Remove all installed plugins and icons
+make clean
+```
+
+**Features:**
+- ✅ Automatically copies all `.py` and `.png` files to the correct KiCAD plugins directory
+- ✅ Shows installation status with file timestamps
+- ✅ Safe clean operation that only removes files from this project
+- ✅ Uses portable paths (works on any system)
+
+**Requirements:**
+- Make utility (usually pre-installed on macOS/Linux)
+- KiCAD 9.0 installed in the default location
 
 Good luck!
 
