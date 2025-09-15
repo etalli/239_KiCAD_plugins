@@ -51,7 +51,8 @@ Creates a ZIP archive backup of the current KiCad project.
 - ✅ Includes custom footprints/symbols folders
 - Excludes `.git` and previous backups
 - Output saved in `backups/` folder under the project directory
-- 
+- Then, open that backup directory with Finder to check the file.
+  
 ## Installation
 
 1. Open the plugins folder from the KiCAD application, Tools/Plugins folder, then copy all the python scripts and icons into the directory.  That's all.
