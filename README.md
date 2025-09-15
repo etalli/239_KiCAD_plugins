@@ -4,12 +4,12 @@ This repository contains a set of custom KiCad 9.0.4 plugins to automate common 
 
 Why did I make this tool? Because deleting the existing tracks before running the auto-router was a hassle, so I made it possible to remove them all with a single click from an icon.
 
-
 [English Version](README.md) | [日本語版](README-j.md)
 
 ## 📦 Plugin List
 
 ### 1. delete_track.py
+
 Removes all track segments from the PCB.
 
 - 🧹 Deletes only `PCB_TRACK` objects (not vias or zones)
@@ -17,6 +17,7 @@ Removes all track segments from the PCB.
 - Toolbar button included
 
 ### 2. delete_unlocked_track.py
+
 Removes unlocked track segments from the PCB.
 
 - 🧹 Deletes only unlocked `PCB_TRACK` objects
@@ -24,12 +25,14 @@ Removes unlocked track segments from the PCB.
 - Toolbar button included
 
 ### 3. delete_all_tracks_and_vias.py
+
 Removes both track segments and vias from the PCB.
 
 - Deletes both `PCB_TRACK` and `PCB_VIA` objects
 - Toolbar button included
 
 ### 4. insert_build_number.py
+
 Inserts or updates a "Build Number" text on the PCB layout.
 
 - Automatically increments build number (e.g., `Build 001`)
@@ -38,20 +41,24 @@ Inserts or updates a "Build Number" text on the PCB layout.
 - Text added to front silkscreen layer at position (10mm, 10mm)
 
 ### 5. change_items_to_Fsilkscreen.py
+
 Changes selected items to front silkscreen layer.
 
 - Converts selected items to F.Silkscreen layer
 - Useful for moving items between layers
 - Toolbar button included
 
-### 6 backup.py
-Creates a ZIP archive backup of the current project with time stamp.
+### 6. backup.py
 
-- ✅ Supports `.kicad_pro`, `.kicad_sch`, `.kicad_pcb`
-- ✅ Includes custom footprints/symbols folders
-- Excludes `.git` and previous backups
+Creates a ZIP archive backup of the current project with timestamp.
+
+- ✅ Supports `.kicad_pro`, `.kicad_sch`, `.kicad_pcb` files
+- ✅ Includes custom footprints (`_footprints`) and symbols (`_symbols`) folders
+- ✅ Excludes `.git` directory and previous `backups/` folder
+- ✅ Automatically opens backup directory in Finder (macOS)
+- ✅ Timestamp format: `YYYYMMDD_HHMMSS` (e.g., `20250118_143022`)
 - Output saved in `backups/` folder under the project directory
-- Then, open that backup directory with Finder to check the file.
+- Toolbar button included
   
 ## Installation
 
