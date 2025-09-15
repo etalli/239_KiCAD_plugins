@@ -25,7 +25,7 @@ class BackupProject(pcbnew.ActionPlugin):
 
         now = datetime.now().strftime("%Y%m%d_%H%M%S")
         backup_filename = f"{project_name}_{now}.zip"
-        backup_dir = os.path.join(project_dir, "backups")
+        backup_dir = os.path.join(project_dir, "MyBackups")
         os.makedirs(backup_dir, exist_ok=True)
         backup_full_path = os.path.join(backup_dir, backup_filename)
 
