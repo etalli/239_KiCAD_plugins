@@ -45,7 +45,7 @@ Changes selected items to front silkscreen layer.
 - Toolbar button included
 
 ### 6 backup.py
-Creates a ZIP archive backup of the current KiCad project.
+Creates a ZIP archive backup of the current project with time stamp.
 
 - ✅ Supports `.kicad_pro`, `.kicad_sch`, `.kicad_pcb`
 - ✅ Includes custom footprints/symbols folders
