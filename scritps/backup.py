@@ -2,12 +2,13 @@ import pcbnew
 import os
 import zipfile
 from datetime import datetime
+import subprocess
 
 class BackupProject(pcbnew.ActionPlugin):
     def defaults(self):
-        self.name = "Backup Project to ZIP"
+        self.name = "Backup Project to ZIP manually (KiCad 9.0.4)"
         self.category = "Project Tools"
-        self.description = "Create a zip backup of the current KiCad project"
+        self.description = "Create a zip backup of the current project with timestamp"
         self.icon_file_name = os.path.join(os.path.dirname(__file__), "backup_icon.png")
         self.show_toolbar_button = True
 
@@ -22,7 +23,7 @@ class BackupProject(pcbnew.ActionPlugin):
         project_dir = os.path.dirname(project_path)
         project_name = os.path.splitext(os.path.basename(project_path))[0]
 
-        now = datetime.now().strftime("%Y%m%d_%H%M")
+        now = datetime.now().strftime("%Y%m%d_%H%M%S")
         backup_filename = f"{project_name}_{now}.zip"
         backup_dir = os.path.join(project_dir, "backups")
         os.makedirs(backup_dir, exist_ok=True)
@@ -59,6 +60,11 @@ class BackupProject(pcbnew.ActionPlugin):
             return
 
         print("Backup complete.")
+        # Open the backup directory in Finder on macOS
+        try:
+            subprocess.run(["open", backup_dir], check=False)
+        except Exception as e:
+            print(f"Failed to open Finder: {e}")
         pcbnew.Refresh()
 
 BackupProject().register()
