@@ -85,7 +85,7 @@ make clean
 - ✅ Uses portable paths (works on any system)
 
 **Requirements:**
-- Make utility (usually pre-installed on macOS/Linux)
+- Make utility (homebrew on MacOS)
 - KiCAD 9.0 installed in the default location
 
 Good luck!
