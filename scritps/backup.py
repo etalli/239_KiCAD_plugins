@@ -6,7 +6,7 @@ import subprocess
 
 class BackupProject(pcbnew.ActionPlugin):
     def defaults(self):
-        self.name = "Backup Project to ZIP manually (KiCad 9.0.4)"
+        self.name = "Backup Project to ZIP manually (KiCad 9.0.5)"
         self.category = "Project Tools"
         self.description = "Create a zip backup of the current project with timestamp"
         self.icon_file_name = os.path.join(os.path.dirname(__file__), "backup_icon.png")

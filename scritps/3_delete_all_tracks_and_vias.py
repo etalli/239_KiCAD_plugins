@@ -3,9 +3,9 @@ import os
 
 class DeleteTracksAndVias(pcbnew.ActionPlugin):
     def defaults(self):
-        self.name = "Delete Tracks and Vias"
+        self.name = "Delete Tracks and Vias (KiCad 9.0.5)"
         self.category = "Cleanup"
-        self.description = "Delete all tracks and vias from the PCB"
+        self.description = "Delete all tracks and vias from the PCB in KiCad 9.0.5"
         self.icon_file_name = os.path.join(os.path.dirname(__file__), "delete_all_tracks_and_vias_icon.png")
         self.show_toolbar_button = True
         

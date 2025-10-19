@@ -5,9 +5,9 @@ import os
 
 class InsertBuildNumber(pcbnew.ActionPlugin):
     def defaults(self):
-        self.name = "BuildTracker"
+        self.name = "BuildTracker (KiCad 9.0.5)"
         self.category = "Utility"
-        self.description = "Insert or update build number with current date/time"
+        self.description = "Insert or update build number with current date/time in KiCad 9.0.5"
         self.icon_file_name = os.path.join(os.path.dirname(__file__), "insert_build_number_icon.png")
         self.show_toolbar_button = True
         
