@@ -1,3 +1,4 @@
+# Delete Unlocked Tracks (KiCad 9.0.5)
 import pcbnew
 import os
 
@@ -16,7 +17,7 @@ class DeleteAllTracks(pcbnew.ActionPlugin):
         skipped = 0
 
         for item in track_list:
-            if isinstance(item, pcbnew.PCB_TRACK):  # トラックのみ対象
+            if isinstance(item, pcbnew.PCB_TRACK):  # Only process tracks
                 if item.IsLocked():
                     skipped += 1
                     continue

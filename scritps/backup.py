@@ -1,3 +1,4 @@
+# Backup Project to ZIP manually (KiCad 9.0.5)
 import pcbnew
 import os
 import zipfile
@@ -34,7 +35,7 @@ class BackupProject(pcbnew.ActionPlugin):
         try:
             with zipfile.ZipFile(backup_full_path, "w", zipfile.ZIP_DEFLATED) as zipf:
                 for root, dirs, files in os.walk(project_dir):
-                    # 除外対象
+                    # Exclude these directories
                     rel_root = os.path.relpath(root, project_dir)
                     if rel_root.startswith(".git") or rel_root.startswith("backups"):
                         continue
@@ -43,7 +44,7 @@ class BackupProject(pcbnew.ActionPlugin):
                         full_path = os.path.join(root, file)
                         rel_path = os.path.relpath(full_path, project_dir)
 
-                        # .kicad_* や _symbols/_footprints の全ファイルを含める
+                        # Include all .kicad_* files and _symbols/_footprints files
                         if (
                             file.endswith((".kicad_pro", ".kicad_sch", ".kicad_pcb"))
                             or "_symbols" in rel_path

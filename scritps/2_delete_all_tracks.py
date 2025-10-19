@@ -1,3 +1,4 @@
+# Delete All Tracks (KiCad 9.0.5)
 import pcbnew
 import os
 

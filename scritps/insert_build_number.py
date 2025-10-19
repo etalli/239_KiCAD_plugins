@@ -1,3 +1,4 @@
+# Insert Build Number (KiCad 9.0.5)
 import pcbnew
 import datetime
 import re
@@ -15,7 +16,7 @@ class InsertBuildNumber(pcbnew.ActionPlugin):
         board = pcbnew.GetBoard()
         build_prefix = "Build "
 
-        # 既存のBuildテキストを探す
+        # Find existing Build text
         existing_build_texts = []
         for item in board.GetDrawings():
             if isinstance(item, pcbnew.PCB_TEXT):
@@ -23,7 +24,7 @@ class InsertBuildNumber(pcbnew.ActionPlugin):
                 if text.startswith(build_prefix):
                     existing_build_texts.append(item)
 
-        # 現在の最大ビルド番号を調べる
+        # Find the current maximum build number
         max_build_num = 0
         for item in existing_build_texts:
             match = re.match(r"Build (\d+)", item.GetText())
@@ -34,20 +35,20 @@ class InsertBuildNumber(pcbnew.ActionPlugin):
 
         new_build_num = max_build_num + 1
 
-        # 現在の日時
+        # Current date and time
         now = datetime.datetime.now()
         timestamp = now.strftime("%Y-%m-%d %H:%M")
 
-        # 新しいテキスト
+        # New text
         new_text = f"Build {new_build_num:03d} @ {timestamp}"
 
-        # 上書きまたは新規追加
+        # Overwrite or create new
         if existing_build_texts:
-            # 最初のものに上書き（複数ある場合）
+            # Overwrite the first one (if multiple exist)
             target = existing_build_texts[0]
             target.SetText(new_text)
         else:
-            # 新規作成
+            # Create new
             text = pcbnew.PCB_TEXT(board)
             text.SetText(new_text)
             text.SetPosition(pcbnew.VECTOR2I(pcbnew.FromMM(10), pcbnew.FromMM(10)))

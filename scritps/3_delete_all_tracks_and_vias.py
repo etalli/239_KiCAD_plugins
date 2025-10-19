@@ -1,3 +1,4 @@
+# Delete Tracks and Vias (KiCad 9.0.5)
 import pcbnew
 import os
 

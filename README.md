@@ -1,8 +1,8 @@
 # KiCad Plugin Collection
 
-This repository contains a set of custom KiCad 9.0.4 plugins to automate common PCB tasks such as cleanup, backup, and metadata insertion. Each script is designed for easy operation and includes a toolbar button icon in the KiCad Application.
+This repository contains a set of custom KiCad 9.0.5 plugins to automate common PCB tasks such as cleanup, backup, and metadata insertion. Each script is designed for easy operation and includes a toolbar button icon in the KiCad Application.
 
-Why did I make this tool? Because deleting the existing tracks before running the auto-router was a hassle, so I made it possible to remove them all with a single click from an icon.
+Why did I make this tool? Because deleting existing wiring before running the auto-router was troublesome, so I made it possible to quickly operate with features like bulk deletion with a single click from an icon.
 
 [English Version](README.md) | [日本語版](README-j.md)
 
@@ -50,15 +50,12 @@ Changes selected items to front silkscreen layer.
 
 ### 6. backup.py
 
-Creates a ZIP archive backup of the current project with timestamp.
+Creates a ZIP archive backup of the current KiCad project.
 
 - ✅ Supports `.kicad_pro`, `.kicad_sch`, `.kicad_pcb` files
-- ✅ Includes custom footprints (`_footprints`) and symbols (`_symbols`) folders
-- ✅ Excludes `.git` directory and previous `backups/` folder
-- ✅ Automatically opens backup directory in Finder (macOS)
-- ✅ Timestamp format: `YYYYMMDD_HHMMSS` (e.g., `20250118_143022`)
-- Output saved in `backups/` folder under the project directory
-- Toolbar button included
+- ✅ Includes custom footprint/symbol folders
+- 🧹 Excludes `.git` and previous backups
+- 📁 Output saved in `MyBackups/` folder under the project directory
   
 ## Installation
 
@@ -85,8 +82,8 @@ make clean
 - ✅ Uses portable paths (works on any system)
 
 **Requirements:**
-- Make utility (homebrew on MacOS)
-- KiCAD 9.0 installed in the default location
+- Make utility (usually pre-installed on macOS/Linux)
+- KiCAD 9.0.5 installed in the default location
 
 Good luck!
 
