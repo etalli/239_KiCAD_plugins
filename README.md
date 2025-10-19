@@ -8,20 +8,20 @@ Why did I make this tool? Because deleting the existing tracks before running th
 
 ## 📦 Plugin List
 
-### 1. delete_track.py
-
-Removes all track segments from the PCB.
-
-- 🧹 Deletes only `PCB_TRACK` objects (not vias or zones)
-- 🧪 Designed for use with KiCad 9.0.1
-- Toolbar button included
-
-### 2. delete_unlocked_track.py
+### 1. delete_unlocked_tracks.py
 
 Removes unlocked track segments from the PCB.
 
 - 🧹 Deletes only unlocked `PCB_TRACK` objects
 - Preserves locked tracks
+- Toolbar button included
+
+### 2. delete_all_tracks.py
+
+Removes all track segments from the PCB (tracks only, no vias).
+
+- Deletes all `PCB_TRACK` objects (including locked tracks)
+- Preserves vias and zones
 - Toolbar button included
 
 ### 3. delete_all_tracks_and_vias.py
@@ -40,7 +40,7 @@ Inserts or updates a "Build Number" text on the PCB layout.
 - Replaces existing text if found, otherwise adds new one
 - Text added to front silkscreen layer at position (10mm, 10mm)
 
-### 5. change_items_to_Fsilkscreen.py
+### 5. change_items_to_FSLK.py
 
 Changes selected items to front silkscreen layer.
 
