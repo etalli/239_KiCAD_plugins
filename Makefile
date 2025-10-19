@@ -1,7 +1,7 @@
 install:
 	cp scritps/*.py scritps/*.png $(HOME)/Documents/KiCAD/9.0/scripting/plugins/
 	@echo "=== ファイルの更新時刻（何分前） ==="
-	@find $(HOME)/Documents/KiCAD/9.0/scripting/plugins/ -name "*.py" -o -name "*.png" | while read file; do \
+	@find $(HOME)/Documents/KiCAD/9.0/scripting/plugins/ -name "*.py" -o -name "*.png" | sort | while read file; do \
 		if [ -f "$$file" ]; then \
 			current_time=$$(date +%s); \
 			file_time=$$(date -r "$$file" +%s); \
