@@ -1,4 +1,4 @@
-# KiCad Plugin Collection
+# KiCad Plugin Collection for KiCAD 9.0
 
 This repository contains a set of custom KiCad 9.0.5 plugins to automate common PCB tasks such as cleanup, backup, and metadata insertion. Each script is designed for easy operation and includes a toolbar button icon in the KiCad Application.
 
