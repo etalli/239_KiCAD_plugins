@@ -1,0 +1,32 @@
+---
+alwaysApply: true
+---
+
+# KiCAD Plugins Project Structure
+
+This is a KiCAD 9.0.4 plugin collection project with the following structure:
+
+## Core Files
+- [Makefile](mdc:Makefile) - Build system for installation and cleanup
+- [README.md](mdc:README.md) - Project documentation in English
+- [README-j.md](mdc:README-j.md) - Project documentation in Japanese
+- [LICENSE](mdc:LICENSE) - Project license
+
+## Scripts Directory
+All Python plugins and assets are located in the `scritps/` directory:
+- Python scripts: `*.py` files (KiCAD plugin implementations)
+- Icon files: `*.png` files (toolbar button icons)
+- Design files: `*.afdesign` files (Affinity Designer source files)
+
+## Plugin Naming Convention
+- Scripts are numbered: `1_`, `2_`, `3_` etc.
+- Icons follow pattern: `{function}_icon.png`
+- All files use snake_case naming
+
+## Target Installation Path
+All plugins are installed to: `$(HOME)/Documents/KiCAD/9.0/scripting/plugins/`
+
+## Build Commands
+- `make install` - Install all plugins and icons
+- `make clean` - Remove only project-specific files
+- `make clean-all` - Remove all files from target directory

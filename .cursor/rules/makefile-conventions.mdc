@@ -1,0 +1,32 @@
+---
+globs: Makefile
+---
+
+# Makefile Conventions
+
+## Target Structure
+- `install` - Copy all scripts and icons to KiCAD plugins directory
+- `clean` - Remove only project-specific files (selective cleanup)
+- `clean-all` - Remove all files from target directory (complete cleanup)
+
+## Path Conventions
+- Target directory: `$(HOME)/Documents/KiCAD/9.0/scripting/plugins/`
+- Source files: `scritps/*.py scritps/*.png`
+- Use `$(HOME)` for portable home directory reference
+
+## User Feedback
+- All messages must be in English
+- Use `@echo` for user-facing messages
+- Show progress and completion status
+- Display file modification times after installation
+
+## File Operations
+- Use `cp` for installation (preserves file attributes)
+- Use `rm -f` for selective cleanup (ignores missing files)
+- Use `rm -rf` for complete cleanup (recursive force)
+- Use `find` with proper escaping for file operations
+
+## Error Handling
+- Use `-f` flag with `rm` to avoid errors on missing files
+- Use `@` prefix to suppress command echo in output
+- Provide clear status messages for each operation

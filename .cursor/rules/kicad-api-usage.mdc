@@ -1,0 +1,46 @@
+---
+description: KiCAD API usage patterns and best practices
+---
+
+# KiCAD API Usage Patterns
+
+## Board Operations
+- Always get board with `pcbnew.GetBoard()`
+- Refresh display after changes with `pcbnew.Refresh()`
+- Use `board.GetTracks()` to get all track objects
+- Use `board.Remove(item)` to delete objects
+
+## Object Type Checking
+- Use `isinstance(item, pcbnew.PCB_TRACK)` for tracks
+- Use `isinstance(item, pcbnew.PCB_VIA)` for vias
+- Check `item.IsLocked()` for locked status
+- Use `item.GetLayer()` for layer operations
+
+## Common PCB Object Types
+- `PCB_TRACK` - Track segments
+- `PCB_VIA` - Via holes
+- `PCB_TEXT` - Text objects
+- `PCB_ZONE` - Copper zones
+
+## Layer Operations
+- Use layer constants like `pcbnew.F_SilkS` for front silkscreen
+- Use `item.SetLayer(layer)` to change layers
+- Use `item.GetLayer()` to get current layer
+
+## Text Operations
+- Use `pcbnew.PCB_TEXT(board)` to create text objects
+- Use `text.SetText("content")` to set text content
+- Use `text.SetPosition(pcbnew.VECTOR2I(x, y))` for positioning
+- Use `board.Add(text)` to add text to board
+
+## Iteration Patterns
+- Convert generators to lists: `list(board.GetTracks())`
+- Use counters for operation feedback
+- Always check object types before operations
+- Handle locked objects appropriately
+
+## Error Handling
+- Provide user feedback for all operations
+- Count and report results
+- Use try-catch for critical operations
+- Validate board state before operations

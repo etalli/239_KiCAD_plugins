@@ -1,0 +1,49 @@
+---
+globs: *.py
+---
+
+# KiCAD Plugin Development Patterns
+
+## Plugin Class Structure
+All KiCAD plugins must follow this pattern:
+
+```python
+import pcbnew
+import os
+
+class PluginName(pcbnew.ActionPlugin):
+    def defaults(self):
+        self.name = "Plugin Display Name"
+        self.category = "Category Name"
+        self.description = "Plugin description"
+        self.icon_file_name = os.path.join(os.path.dirname(__file__), "icon_name.png")
+        self.show_toolbar_button = True
+
+    def Run(self):
+        # Plugin implementation here
+        pass
+
+PluginName().register()
+```
+
+## Required Imports
+- Always import `pcbnew` for KiCAD API access
+- Always import `os` for file path operations
+- Use `os.path.join(os.path.dirname(__file__), "icon.png")` for icon paths
+
+## Plugin Registration
+- Must call `.register()` on the plugin class instance
+- This enables the plugin in KiCAD's plugin system
+
+## Board Access
+- Use `pcbnew.GetBoard()` to get the current PCB board
+- Use `pcbnew.Refresh()` after making changes to update the display
+
+## Error Handling
+- Always provide user feedback via `print()` statements
+- Count operations and report results (e.g., "Deleted X items")
+
+## File Naming
+- Use descriptive names with underscores
+- Prefix with numbers for ordering (1_, 2_, 3_)
+- Icon files should end with `_icon.png`

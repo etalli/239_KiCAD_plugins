@@ -1,0 +1,37 @@
+---
+globs: *.py,*.md,Makefile
+---
+
+# Code Style Guidelines
+
+## Python Code Style
+- Use snake_case for variable and function names
+- Use PascalCase for class names
+- Use descriptive variable names (e.g., `deleted`, `skipped`, `track_list`)
+- Add comments for complex logic, especially KiCAD-specific operations
+- Preserve original comments when making modifications
+
+## Documentation Style
+- Use clear, descriptive function and class names
+- Add docstrings for complex functions
+- Use inline comments for KiCAD API operations
+- Maintain both English and Japanese documentation versions
+
+## Makefile Style
+- Use consistent indentation (tabs, not spaces)
+- Group related operations together
+- Use descriptive target names
+- Add comments for complex shell operations
+- Use `@` prefix for user-facing echo commands
+
+## File Organization
+- Keep related files together (script + icon + design files)
+- Use consistent naming patterns across all files
+- Maintain clear separation between source and target files
+- Use relative paths where possible
+
+## Error Messages
+- All user-facing messages must be in English
+- Use clear, actionable error messages
+- Provide feedback for successful operations
+- Use consistent formatting for status messages
