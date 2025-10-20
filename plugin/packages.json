@@ -1,0 +1,43 @@
+{
+  "packages": [
+    {
+      "$schema": "https://go.kicad.org/pcm/schemas/v1",
+      "name": "My KiCad Plugin",
+      "description": "Demo action plugin",
+      "description_full": "A minimal pcbnew Action Plugin for KiCad\n
+      Shows a message box with the board title.",
+      "identifier": "com.example.myplugin",
+      "type": "plugin",
+      "author": {
+        "name": "k2",
+        "contact": {
+          "web": "https://github.com/etalli"
+        }
+      },
+      "maintainer": {
+        "name": "k2"
+      },
+      "license": "MIT",
+      "resources": {
+        "homepage": "https://github.com/etalli/kicad-plugin-collection",
+        "icon": "icons/kicad-plugin-collection.png"
+      },
+      "tags": [
+        "python",
+        "pcbnew",
+        "action-plugin"
+      ],
+      "versions": [
+        {
+          "version": "1.0.0",
+          "status": "stable",
+          "kicad_version": "7.0",
+          "download_sha256": "f6d9939ed8ecedf6f714408719a81e2291553ee3769b4584197fc18757a76762",
+          "download_size": 1981,
+          "install_size": 0,
+          "download_url": "https://example.com/downloads/myplugin-1.0.0.zip"
+        }
+      ]
+    }
+  ]
+}

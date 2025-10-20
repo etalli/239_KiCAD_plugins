@@ -1,0 +1,22 @@
+{
+  "$schema": "https://go.kicad.org/pcm/schemas/v1",
+  "name": "My KiCad Repository",
+  "maintainer": {
+    "name": "k2",
+    "contact": {
+      "web": "https://github.com/etalli"
+    }
+  },
+  "packages": {
+    "url": "https://example.com/repo/packages.json",
+    "sha256": "cfc1954fed6ae07b4dd5a39d30cfe68e08667983b16f3e701fca4d21135505bd",
+    "update_time_utc": "2025-10-21 00:00:00",
+    "update_timestamp": 1760966400
+  },
+  "resources": {
+    "url": "https://example.com/repo/resources.zip",
+    "sha256": "f6d9939ed8ecedf6f714408719a81e2291553ee3769b4584197fc18757a76762",
+    "update_time_utc": "2025-10-21 00:00:00",
+    "update_timestamp": 1760966400
+  }
+}
